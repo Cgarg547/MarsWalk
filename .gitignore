@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+
+# Node
+node_modules/
+.next/
+out/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Data
+data/raw/*
+data/processed/*
+data/cache/*
+
+# OS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Large generated MarsWalk data
+data/derived/
+
+# Large raster/data files anywhere in the project
+*.tif
+*.tiff
+*.img
+*.h5
+*.hdf5
+*.nc
+*.npy
+*.npz
+*.parquet

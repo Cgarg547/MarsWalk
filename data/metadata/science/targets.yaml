@@ -1,0 +1,97 @@
+schema:
+  name: MarsWalk Science Target Registry
+  version: "1.0"
+
+study_area:
+  name: Jezero Crater
+  body: Mars
+
+description: >
+  Registry of candidate science targets used by MarsWalk
+  for mission-planning research and demonstration.
+
+target_policy:
+  requirement: >
+    Every science target must have an identifiable source,
+    documented rationale, and explicit confidence/status.
+
+  prohibited:
+    - invented scientific claims
+    - undocumented coordinates
+    - unsupported NASA certification claims
+
+targets:
+
+  - id: wildcat_ridge
+    name: Wildcat Ridge
+    target_type: candidate_science_target
+
+    description: >
+      Candidate science target registered for terrain
+      characterization and mission-planning demonstration
+      within the Jezero study area.
+
+    coordinates:
+      x: 4591336.864
+      y: 1091003.562
+      coordinate_system: ESRI:103885
+      coordinate_units: meters
+
+    source:
+      dataset: jezero_hirise_dtm
+      reference: >
+        MarsWalk source-terrain dataset and associated
+        Jezero terrain analysis workflow.
+
+    rationale: >
+      Registered as a candidate target for evaluating
+      terrain-aware science-target access and mission
+      decision-support workflows.
+
+    confidence:
+      level: provisional
+      basis: >
+        Spatial coverage has been independently verified
+        against the MarsWalk raw Jezero DTM.
+
+    status:
+      classification: research_demo
+      scientifically_validated: false
+      operational_target: false
+
+  - id: skinner_ridge
+    name: Skinner Ridge
+    target_type: candidate_science_target
+
+    description: >
+      Candidate science target registered for terrain
+      characterization and mission-planning demonstration
+      within the Jezero study area.
+
+    coordinates:
+      x: 4591354.646
+      y: 1091020.159
+      coordinate_system: ESRI:103885
+      coordinate_units: meters
+
+    source:
+      dataset: jezero_hirise_dtm
+      reference: >
+        MarsWalk source-terrain dataset and associated
+        Jezero terrain analysis workflow.
+
+    rationale: >
+      Registered as a candidate target for evaluating
+      terrain-aware science-target access and mission
+      decision-support workflows.
+
+    confidence:
+      level: provisional
+      basis: >
+        Spatial coverage has been independently verified
+        against the MarsWalk raw Jezero DTM.
+
+    status:
+      classification: research_demo
+      scientifically_validated: false
+      operational_target: false

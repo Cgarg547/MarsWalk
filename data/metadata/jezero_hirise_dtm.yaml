@@ -1,0 +1,60 @@
+dataset:
+  id: jezero_hirise_dtm
+  name: Jezero HiRISE-derived Digital Terrain Model
+
+study_area:
+  name: Jezero Crater
+  body: Mars
+
+dataset_role:
+  primary_use: source_terrain
+  marswalk_use: >
+    Source terrain information for terrain analysis,
+    terrain-cost derivation, and route planning.
+
+data_type:
+  category: digital_terrain_model
+
+processing_chain:
+  - source_terrain
+  - slope_derivation
+  - roughness_derivation
+  - terrain_cost_derivation
+  - routing
+  - route_risk_analysis
+  - mission_decision_support
+
+derived_products:
+  terrain_cost:
+    filename: data/derived/jezero/routing/terrain_cost_10m.tif
+    resolution_m: 10
+
+  slope:
+    filename: data/derived/jezero/slope_degrees.tif
+
+  slope_difference:
+    filename: data/derived/jezero/slope_difference.tif
+
+  roughness:
+    filename: data/derived/jezero/roughness_5m.tif
+
+  roughness_standard_deviation:
+    filename: data/derived/jezero/roughness_std_5m.tif
+
+scientific_status:
+  classification: research_input
+  operational_certification: false
+  nasa_certification: false
+
+limitations:
+  - >
+    MarsWalk uses the dataset as a research input for terrain
+    analysis and does not claim operational flight qualification.
+
+  - >
+    Derived terrain-cost values are model outputs and should not
+    be interpreted as validated rover mobility limits.
+
+  - >
+    Operational mission use would require independent validation,
+    instrument-specific constraints, and mission-qualified models.

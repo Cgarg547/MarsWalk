@@ -1,0 +1,77 @@
+project:
+  name: MarsWalk
+  version: "0.1.0"
+  region: Jezero Crater
+  purpose: >
+    Explainable decision-support prototype for planning
+    human Mars exploration traverses.
+
+datasets:
+  - id: jezero_hirise_dtm
+    name: Jezero HiRISE-derived Digital Terrain Model
+    type: digital_terrain_model
+    role: source_terrain
+    location: Jezero Crater
+
+    description: >
+      Source terrain dataset used as the basis for deriving
+      terrain-analysis products for MarsWalk.
+
+    processing:
+      derived_products:
+        - slope
+        - slope_difference
+        - roughness
+        - terrain_cost
+        - routing_surface
+
+    usage:
+      purpose: >
+        Terrain-aware route planning and mission decision-support
+        research within the MarsWalk Jezero study area.
+
+    scientific_status:
+      classification: research_input
+      operational_certification: false
+
+  - id: terrain_cost_10m
+    name: MarsWalk 10 m Terrain Cost Surface
+    type: derived_raster
+    role: routing_surface
+    location: Jezero Crater
+
+    filename: data/derived/jezero/routing/terrain_cost_10m.tif
+
+    resolution_m: 10
+
+    description: >
+      Derived terrain-cost raster used by the MarsWalk routing
+      and mission-risk analysis pipeline.
+
+    processing:
+      algorithm: terrain_cost_pipeline
+      routing_algorithm: A*
+
+    scientific_status:
+      classification: derived_research_product
+      operational_certification: false
+
+  - id: marswalk_candidate_routes
+    name: MarsWalk Candidate Route Set
+    type: derived_vector
+    role: routing_candidates
+    location: Jezero Crater
+
+    files:
+      - route_shortest.csv
+      - route_balanced.csv
+      - route_safe.csv
+      - route_very_safe.csv
+
+    description: >
+      Candidate terrain-aware routes generated from the MarsWalk
+      routing surface for comparative mission analysis.
+
+    scientific_status:
+      classification: derived_research_product
+      operational_certification: false
